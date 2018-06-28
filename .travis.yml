@@ -1,0 +1,17 @@
+services:
+  - docker
+
+script:
+  - make docker
+  - docker-compose up -d
+
+deploy:
+  - provider: script
+    script: make docker_upload
+    on:
+      all_branches: true
+      condition: $TRAVIS_BRANCH =~ ^develop|master$
+
+notifications:
+  email:
+    - ops@capptions.com
