@@ -3,7 +3,7 @@ services:
 
 script:
   - make docker
-  - docker-compose up -d
+  - docker-compose -f proxy.yaml up -d
 
 deploy:
   - provider: script
