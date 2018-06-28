@@ -5,6 +5,8 @@ services:
     build: .
     image: capptions/proxy
     command: /usr/local/bin/nginx_start
+    volumes:
+      - ./develop:/usr/local/etc/passwd
     ports:
       - 8911:8911
       - 8991:8991
